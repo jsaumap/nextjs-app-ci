@@ -1,4 +1,10 @@
-import { Pie } from '@ant-design/charts';
+//import { Pie } from '@ant-design/charts';
+
+import dynamic from 'next/dynamic';
+const Pie = dynamic(
+  () => import("@ant-design/charts").then((mod) => mod.Line),
+  { ssr: false }
+)
 const PiesPages = () => {
   var data = [
     {

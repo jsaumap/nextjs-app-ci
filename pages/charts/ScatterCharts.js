@@ -1,5 +1,11 @@
-import { Scatter } from '@ant-design/charts';
-import React, { useState, useEffect } from 'react';
+// import { Scatter } from '@ant-design/charts';
+import React from 'react';
+
+import dynamic from 'next/dynamic';
+const Scatter = dynamic(
+  () => import("@ant-design/charts").then((mod) => mod.Line),
+  { ssr: false }
+)
 
 const ScatterPage = () => {
   const data = [

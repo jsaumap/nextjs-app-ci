@@ -1,4 +1,8 @@
-import { Line } from '@ant-design/charts';
+import dynamic from 'next/dynamic';
+const Line = dynamic(
+  () => import("@ant-design/charts").then((mod) => mod.Line),
+  { ssr: false }
+)
 
 const LinesPages = () => {
   const data = [

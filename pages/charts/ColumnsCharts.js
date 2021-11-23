@@ -1,4 +1,10 @@
-import { Column } from '@ant-design/charts';
+// import { Column } from '@ant-design/charts';
+
+import dynamic from 'next/dynamic';
+const Column = dynamic(
+  () => import("@ant-design/charts").then((mod) => mod.Line),
+  { ssr: false }
+)
 
 const ColumnsPages = () => {
   const data = [
